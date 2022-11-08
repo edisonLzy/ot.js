@@ -1,16 +1,45 @@
-# Maintainer wanted
+源字符串：apple
 
-This project has been bit rotting for long enough. If you want to help me dust it off by taking over as maintainer, please get in touch at [tim@timbaumann.info](mailto:tim@timbaumann.info).
+A编辑的结果：appple -> [retain: 3, insert: 'p', retain: 2]
 
-* Documentation: http://operational-transformation.github.io/
-* Compatibility: Requires CodeMirror >= 4.0
-* Visualization: http://operational-transformation.github.io/visualization.html
-* License: [MIT license](https://github.com/Operational-Transformation/ot.js/blob/master/LICENSE)
-* Report bugs at https://github.com/Operational-Transformation/ot.js/issues
-* Travis CI: [![Build Status][travis-image]][travis-url]
-* NPM: [![NPM][npm-image]][npm-url]
 
-[npm-image]: https://img.shields.io/npm/v/ot.svg?style=flat
-[npm-url]: https://npmjs.org/package/ot
-[travis-image]: https://img.shields.io/travis/Operational-Transformation/ot.js.svg?style=flat
-[travis-url]: https://travis-ci.org/Operational-Transformation/ot.js
+B编辑的结果：aplle  -> [retain: 2, delete: -1, retain: 1, insert: 'l', retain:1]
+
+
+A: 3
+B: 2
+
+A': [2]
+B': [2]
+
+A: 1
+B: -1
+
+A': [2]
+B': [2, -1]
+
+A: p
+B: 1
+
+A': [2, p]
+B': [2, -1, 1]
+
+A: 2
+B: 1
+
+A': [2, p, 1]
+B': [2, -1, 1, 1]
+
+A: 1
+B: 'l'
+
+A': [2, p, 1, 1]
+B': [2, -1, 1, 1,'l']
+
+A: 1
+B: 1
+
+A': [2, p, 1, 1, 1]
+B': [2, -1, 1, 1,'l',1]
+
+
